@@ -22,8 +22,8 @@ const Navbar = () => {
                 src="/logo2.png"
                 alt="BookLoop logo"
                 loading="eager"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 className="object-cover h-auto w-auto"
               />
               <h3 className="font-black text-lg tracking-tight">BookLoop.</h3>
