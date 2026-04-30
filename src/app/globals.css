@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+
+:root {
+	--brand-500: #8494ff;
+	--brand-500-10: rgba(132, 148, 255, 0.1);
+	--brand-500-15: rgba(132, 148, 255, 0.15);
+	--brand-500-20: rgba(132, 148, 255, 0.2);
+	--brand-500-30: rgba(132, 148, 255, 0.3);
+}

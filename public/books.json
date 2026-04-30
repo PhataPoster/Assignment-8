@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Silent Echo",
+    "author": "Elena Rossi",
+    "description": "A haunting story about a small town's forgotten history and the secrets buried beneath its streets.",
+    "category": "story",
+    "available_quantity": 14,
+    "image_url": "https://example.com/images/silent-echo.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Quantum Leap Basics",
+    "author": "Dr. Aris Thorne",
+    "description": "An accessible introduction to the complexities of quantum mechanics and its future applications.",
+    "category": "science",
+    "available_quantity": 8,
+    "image_url": "https://example.com/images/quantum-leap.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Mastering Rust",
+    "author": "Marcus Vane",
+    "description": "A comprehensive guide to systems programming with a focus on memory safety and concurrency.",
+    "category": "tech",
+    "available_quantity": 25,
+    "image_url": "https://example.com/images/mastering-rust.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Last Orchard",
+    "author": "Sarah Jenkins",
+    "description": "A touching narrative of a family fighting to save their ancestral land in a changing world.",
+    "category": "story",
+    "available_quantity": 5,
+    "image_url": "https://example.com/images/last-orchard.jpg"
+  },
+  {
+    "id": 5,
+    "title": "AI: The Next Frontier",
+    "author": "Li Wei",
+    "description": "Exploring the ethical and technical evolution of neural networks in the mid-2020s.",
+    "category": "tech",
+    "available_quantity": 12,
+    "image_url": "https://example.com/images/ai-frontier.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Microbial Worlds",
+    "author": "Dr. Susan Gable",
+    "description": "A deep dive into the invisible organisms that sustain life on Earth.",
+    "category": "science",
+    "available_quantity": 19,
+    "image_url": "https://example.com/images/microbial-worlds.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Midnight in Tokyo",
+    "author": "Kenji Sato",
+    "description": "A neo-noir mystery set in the neon-drenched streets of a futuristic Tokyo.",
+    "category": "story",
+    "available_quantity": 7,
+    "image_url": "https://example.com/images/midnight-tokyo.jpg"
+  },
+  {
+    "id": 8,
+    "title": "The DevOps Handbook",
+    "author": "Jordan Smith",
+    "description": "Strategies for integrating development and operations to accelerate software delivery.",
+    "category": "tech",
+    "available_quantity": 30,
+    "image_url": "https://example.com/images/devops-handbook.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Astrophysics for All",
+    "author": "Neil deGrasse Tyson",
+    "description": "A journey through space and time, simplified for curious minds of all ages.",
+    "category": "science",
+    "available_quantity": 22,
+    "image_url": "https://example.com/images/astrophysics-all.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Clouds of Glass",
+    "author": "Amina Mansour",
+    "description": "A speculative fiction novel exploring a world where memories can be harvested as data.",
+    "category": "story",
+    "available_quantity": 3,
+    "image_url": "https://example.com/images/clouds-glass.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Cybersecurity Essentials",
+    "author": "Robert Chen",
+    "description": "Protecting digital assets in an era of increasing global connectivity and threats.",
+    "category": "tech",
+    "available_quantity": 15,
+    "image_url": "https://example.com/images/cybersecurity-essentials.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Gene Revolution",
+    "author": "Dr. Maya Patel",
+    "description": "An investigation into CRISPR technology and the future of human genetics.",
+    "category": "science",
+    "available_quantity": 10,
+    "image_url": "https://example.com/images/gene-revolution.jpg"
+  }
+]
