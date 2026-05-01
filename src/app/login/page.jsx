@@ -14,6 +14,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { IconBase } from "react-icons";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
   const onSubmit = async (e) => {
@@ -29,8 +30,21 @@ export default function SignUpPage() {
             callbackURL: "/"
         },
     );
+    console.log(data, error);
+    if(error){
+        toast.error(`Login failed: ${error.message}`);
+    }
+    else{
+        toast.success("Login successful!");
+    }
     
   };
+
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+        provider: "google",
+    })
+  }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -59,19 +73,6 @@ export default function SignUpPage() {
           minLength={8}
           name="password"
           type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-
-            return null;
-          }}
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
@@ -90,7 +91,7 @@ export default function SignUpPage() {
               or
             </span>
         </div>
-        <Button className="w-full" variant="tertiary">
+        <Button onClick={handleGoogleSignIn} className="w-full" variant="tertiary">
         <Icon icon="devicon:google" />
         Sign in with Google
       </Button>

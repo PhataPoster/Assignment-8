@@ -1,7 +1,10 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CiLogin } from "react-icons/ci";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -11,7 +14,10 @@ const navItems = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const userData = authClient.useSession();
+  const user = userData?.data?.user;
 
+  console.log(user);
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="px-3">
@@ -37,11 +43,10 @@ const Navbar = () => {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`inline-flex items-center rounded-full px-3 py-1.5 transition ${
-                        isActive
+                      className={`inline-flex items-center rounded-full px-3 py-1.5 transition ${isActive
                           ? "bg-[color:var(--brand-500)] text-white"
                           : "text-black/70 hover:text-[color:var(--brand-500)]"
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </Link>
@@ -50,14 +55,34 @@ const Navbar = () => {
               })}
             </ul>
 
-            <div className="flex justify-start sm:justify-end">
+            {!user ? <div className="flex justify-start sm:justify-end gap-2">
               <Link
                 href="/login"
-                className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-white transition hover:brightness-95 active:brightness-90 bg-[color:var(--brand-500)]"
+                className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-white transition hover:brightness-95 active:brightness-90 bg-[color:var(--brand-500)] gap-2"
               >
                 Login
+                <CiLogin className="text-lg" />
               </Link>
-            </div>
+              <Link
+                href="/signup"
+                className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-white transition hover:brightness-95 active:brightness-90 bg-[color:var(--brand-500)] gap-2"
+              >
+                sign up
+              </Link>
+            </div> :
+              <div className="flex justify-center items-center gap-4">
+                <p className="text-sm text-gray-500">Welcome, {user.name}!</p>
+                <Avatar>
+                  <Avatar.Image
+                    alt="John Doe"
+                    src={user?.image}
+                    referrerPolicy="no-referrer" />
+                  <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+                </Avatar>
+                <Button variant="danger" onClick={() => authClient.signOut()}>
+                  Logout
+                </Button>
+              </div>}
           </nav>
         </div>
       </div>

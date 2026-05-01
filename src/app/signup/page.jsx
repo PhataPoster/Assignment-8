@@ -3,6 +3,7 @@ import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
+  button,
   Card,
   Description,
   FieldError,
@@ -11,6 +12,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -39,8 +41,15 @@ export default function SignUpPage() {
     if (data) {
         router.push("/login");
     }
+    else{
+        toast.error(`Sign up failed: ${error.message}`);
+    }
 };
-
+ const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+        provider: "google",
+    })
+  }
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Sign Up</h1>
@@ -102,15 +111,22 @@ export default function SignUpPage() {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2">
-          <Button type="submit">
-            <Check />
+        <div className="mt-4">
+          <Button type="submit" className="w-full block">
+            
             Sign Up
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+          
         </div>
+        <div className="relative text-sm text-center border-t-2 my-2">
+                    <span className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-2">
+                      or
+                    </span>
+                </div>
+                <Button onClick={handleGoogleSignIn} className="w-full" variant="tertiary">
+                <Icon icon="devicon:google" />
+                Sign in with Google
+              </Button>
         <div className="text-sm text-center border-t-2 mt-4 p-4">Already have an account? <Link className="text-blue-500 underline" href="/login">Login</Link></div>
       </Form>
     </Card>
