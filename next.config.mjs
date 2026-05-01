@@ -13,6 +13,10 @@ const nextConfig = {
         hostname: 'i.ibb.co.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: '/**'
+      }
     ],
   }
 };
