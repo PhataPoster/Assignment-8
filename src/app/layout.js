@@ -2,6 +2,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const outfitFont = Outfit({
   subsets: ["latin"],
@@ -20,10 +21,13 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${outfitFont.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col">
         
+        <ToastContainer />
         <Navbar />
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer />
         </body>
     </html>

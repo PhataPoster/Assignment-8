@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BookCard = ({ book }) => {
+    if (!book) return null;
+
     return (
         <Card className="group overflow-hidden rounded-2xl border border-(--brand-500-20) bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/70 transition-colors hover:border-(--brand-500-30)">
             <div className="relative w-full aspect-2/3 bg-(--brand-500-10) overflow-hidden">
@@ -15,7 +17,7 @@ const BookCard = ({ book }) => {
                 />
             </div>
 
-            <div className="mt-1">
+            <div className="p-4">
                 <h3 className="text-base font-semibold leading-snug h-12 overflow-hidden">
                     {book.title}
                 </h3>
@@ -35,7 +37,7 @@ const BookCard = ({ book }) => {
                 </div>
 
                 <div className="mt-4">
-                    <Link href={`/books/${book.id}`} className="block">
+                    <Link href={`/all-books/${book.id}`} className="block">
                         <Button className="w-full bg-(--brand-500) text-white hover:brightness-95 active:brightness-90">
                             View Details
                         </Button>

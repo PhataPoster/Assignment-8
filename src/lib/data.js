@@ -16,3 +16,4 @@ export const fetchBooks = async () => {
 export const fetchCategories = async () => {
     return readPublicJson("category.json");
 };
+
