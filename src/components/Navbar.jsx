@@ -21,8 +21,8 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="px-3">
-        <div className="mx-auto max-w-7xl mt-3 rounded-2xl border border-[color:var(--brand-500-20)] backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80">
-          <nav className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3">
+        <div className="mx-auto max-w-7xl mt-3 rounded-2xl border border-(--brand-500-20) backdrop-blur supports-backdrop-filter:bg-white/70 bg-white/80">
+          <nav className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3">
             <Link href="/" className="flex items-center gap-2 w-fit">
               <Image
                 src="/logo2.png"

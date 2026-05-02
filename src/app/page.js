@@ -1,6 +1,8 @@
 import Banner from "@/components/Banner";
 import NewArrival from "@/components/NewArrival";
+import PlatformStats from "@/components/PlatformStats";
 import BookCard from "@/components/ui/BookCard";
+import UserRating from "@/components/UserRating";
 import { fetchBooks } from "@/lib/data";
 import { Button } from "@heroui/react";
 import Link from "next/link";
@@ -29,6 +31,8 @@ export default function Home() {
             </Button>
           </Link>
       </div>
+      <PlatformStats />
+      <UserRating />
     </div>
   );
 }
