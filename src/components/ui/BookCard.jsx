@@ -6,7 +6,7 @@ const BookCard = ({ book }) => {
     if (!book) return null;
 
     return (
-        <Card className="group overflow-hidden rounded-2xl border border-(--brand-500-20) bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/70 transition-colors hover:border-(--brand-500-30)">
+        <Card className="group overflow-hidden rounded-2xl border border-(--brand-500-20) bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/70 transition-colors hover:border-(--brand-500-30) shadow-lg h-130 mx-auto w-full sm:h-full">
             <div className="relative w-full aspect-2/3 bg-(--brand-500-10) overflow-hidden">
                 <Image
                     src={book.image_url}
@@ -17,8 +17,8 @@ const BookCard = ({ book }) => {
                 />
             </div>
 
-            <div className="p-4">
-                <h3 className="text-base font-semibold leading-snug h-12 overflow-hidden">
+            <div>
+                <h3 className="text-base font-semibold mt-2">
                     {book.title}
                 </h3>
 
@@ -36,7 +36,7 @@ const BookCard = ({ book }) => {
                     </span>
                 </div>
 
-                <div className="mt-4">
+                <div className="mt-6">
                     <Link href={`/all-books/${book.id}`} className="block">
                         <Button className="w-full bg-(--brand-500) text-white hover:brightness-95 active:brightness-90">
                             View Details

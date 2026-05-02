@@ -47,7 +47,8 @@ export default function SignUpPage() {
   }
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
+    <div className="px-3 sm:px-0">
+      <Card className="border mx-auto w-115 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Log in</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
@@ -98,5 +99,6 @@ export default function SignUpPage() {
         <div className="text-sm text-center border-t-2 mt-4 p-4">have not an account? <Link className="text-blue-500 underline" href="/signup">Sign up</Link></div>
       </Form>
     </Card>
+    </div>
   );
 }
