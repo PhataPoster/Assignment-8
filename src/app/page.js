@@ -1,7 +1,9 @@
+import SeeMoreBtn from "@/components/apps/SeeMoreBtn";
 import Banner from "@/components/Banner";
 import NewArrival from "@/components/NewArrival";
 import PlatformStats from "@/components/PlatformStats";
 import BookCard from "@/components/ui/BookCard";
+import SwiperBookShow from "@/components/ui/SwiperBookShow";
 import UserRating from "@/components/UserRating";
 import { fetchBooks } from "@/lib/data";
 import { Button } from "@heroui/react";
@@ -25,11 +27,8 @@ export default function Home() {
             booksData.slice(0, 4).map(book => <BookCard key={book.id} book={book} />)
           }
         </div>
-          <Link href="/all-books" className="inline-block mt-10 mb-10">
-            <Button className="bg-(--brand-500) text-white hover:brightness-95 active:brightness-90">
-              See More <FaArrowRight />
-            </Button>
-          </Link>
+        <SwiperBookShow />
+          <SeeMoreBtn />
       </div>
       <PlatformStats />
       <UserRating />
