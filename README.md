@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BookLoop
 
-## Getting Started
+BookLoop is a simple library-style web app where users can browse books, filter by category, view book details, and manage an account (sign up / log in / profile).
 
-First, run the development server:
+**Live URL**: https://book-loop-gilt.vercel.app/
+
+## Purpose
+
+- Provide a clean browsing experience for discovering books.
+- Support authentication so users can access a personal profile.
+
+## Key Features
+
+- Home page with featured books + “See More” navigation to the full catalog
+- All Books page with category-based filtering via URL query params
+- Book details page with a “Borrow” action and toast feedback
+- Authentication with email/password and Google sign-in
+- Profile page with user info + edit profile (name + avatar image)
+- Responsive UI components (Navbar, cards, sections) with toast notifications
+
+## Tech Stack
+
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- HeroUI
+- Better Auth + MongoDB adapter
+
+## NPM Packages Used
+
+**Runtime dependencies**
+
+- next, react, react-dom
+- @heroui/react, @heroui/styles
+- better-auth, @better-auth/mongo-adapter, @better-auth/infra
+- mongodb
+- react-toastify
+- react-icons, @iconify/react, @gravity-ui/icons
+- react-fast-marquee
+- react-loader-spinner
+
+**Dev dependencies**
+
+- tailwindcss, @tailwindcss/postcss
+- eslint, eslint-config-next
+
+## Getting Started (Local)
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the project root and set:
 
-## Learn More
+```bash
+MONGODB_URI=your_mongodb_connection_string
+GOOGLE_CLIENT_ID=your_google_oauth_client_id
+GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Book and category data are read from JSON files in `public/`.
+- If you face auth issues in local development, ensure the auth client base URL matches your environment.
